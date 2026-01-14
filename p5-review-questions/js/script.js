@@ -1,9 +1,16 @@
 "use strict";
 
+
 function setup() {
-    console.log("go")
+    createCanvas(600, 600);
 }
 
 function draw() {
+    background(0);
 
+    // Draws the ellipses
+    push();
+    fill(255, 100, 100);
+    ellipse(20, 15, 15);
+    pop();
 }
