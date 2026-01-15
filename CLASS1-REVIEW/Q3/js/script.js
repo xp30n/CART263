@@ -29,7 +29,9 @@ function draw() {
 
     drawRect(rect1X, rect1Y, rect1W, rect1H, 218, 39, 245);
     drawRect(rect2X, rect2Y, rect2W, rect2H, 218, 39, 245);
-    // drawRect = random()
+    drawRect(rect3X, rect3Y, rect3W, rect3H, 218, 39, 245);
+
+    moveRect();
 }
 
 function drawRect(x, y, w, h, r, g, b) {
@@ -51,3 +53,10 @@ function keyPressed() {
     }
 }
 
+function moveRect() {
+    rect3Y += 2;
+
+    if (rect3Y === 600) {
+        rect3Y = 0;
+    }
+}
