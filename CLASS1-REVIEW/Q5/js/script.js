@@ -1,5 +1,17 @@
 "use strict";
 
+let counter = 0;
+
+let square1 = {
+    x: 260,
+    y: 250,
+    size: 90,
+    fill: {
+        r: 255,
+        g: 153,
+        b: 0
+    }
+}
 
 function setup() {
     createCanvas(600, 600);
@@ -7,32 +19,13 @@ function setup() {
 
 function draw() {
     background(0);
-    noStroke();
 
-    drawEllipse(20, 15, 15, 19, 156, 235);
-    drawEllipse(40, 50, 30, 185, 19, 235);
-    drawEllipse(70, 100, 60, 69, 19, 235);
-
-    // Draws the ellipses
-    // push();
-    // fill(19, 156, 235);
-    // ellipse(20, 15, 15);
-    // pop();
-
-    // push();
-    // fill(185, 19, 235);
-    // ellipse(40, 50, 30);
-    // pop();
-
-    // push();
-    // fill(69, 19, 235);
-    // ellipse(70,100, 60);
-    // pop();
+    drawSquare();
 }
 
-function drawEllipse(x,y,w,r,g,b) {
+function drawSquare() {
     push();
-    fill(r, g, b);
-    ellipse(x, y, w);
+    fill(square1.fill.r, square1.fill.g, square1.fill.b);
+    square(square1.x, square1.y, square1.size);
     pop();
 }
