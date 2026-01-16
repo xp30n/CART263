@@ -26,17 +26,18 @@ function setup() {
 function draw() {
   background(0);
 
+  drawEllipses();
+
   drawSquare();
 
   checkOverlap();
-
-  drawEllipses();
 
   resetCounter();
 }
 
 function drawSquare() {
   push();
+  noStroke();
   fill(square1.fill.r, square1.fill.g, square1.fill.b);
   square(square1.x, square1.y, square1.size);
   pop();
@@ -71,15 +72,15 @@ function checkOverlap() {
 function drawEllipses() {
     let i = 0;
   
-    let c = color(0, 126, 255, 102);
-  
-    let ellipseAlpha = alpha(c);
+    let a = 20 + counter * 20;
   
     while (i < counter) {
-      noStroke();
+        let size = radius.size * (i + 1);
+
       push();
-      fill(ellipseAlpha);
-      ellipse(width / 2, height / 2, radius.size);
+      stroke(255)
+      fill(255, 255, 255, a);
+      ellipse(width / 2, height / 2, size);
       pop();
   
       i++;
@@ -87,7 +88,7 @@ function drawEllipses() {
   }
 
 function resetCounter() {
-  if (counter >= 10) {
+  if (counter > 10) {
     counter = 0;
   }
 }
