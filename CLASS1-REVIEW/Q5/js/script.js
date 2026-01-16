@@ -30,14 +30,9 @@ function draw() {
 
   checkOverlap();
 
-  if (counter > 0) {
-    drawEllipse();
-  }
+  drawEllipses();
 
   resetCounter();
-
-  // while loop logic:
-  // while the counter increments, draw another ellipse with the same x and y values, but a bigger size/radius
 }
 
 function drawSquare() {
@@ -73,22 +68,26 @@ function checkOverlap() {
   }
 }
 
-function drawEllipse() {
-  let c = color(0, 126, 255, 102);
-
-  let ellipseAlpha = alpha(c);
-
-  noStroke();
-
-  // Middle circle
-  push();
-  fill(ellipseAlpha);
-  ellipse(width / 2, height / 2, radius.size);
-  pop();
-}
+function drawEllipses() {
+    let i = 0;
+  
+    let c = color(0, 126, 255, 102);
+  
+    let ellipseAlpha = alpha(c);
+  
+    while (i < counter) {
+      noStroke();
+      push();
+      fill(ellipseAlpha);
+      ellipse(width / 2, height / 2, radius.size);
+      pop();
+  
+      i++;
+    }
+  }
 
 function resetCounter() {
-    if (counter >= 10) {
-        counter = 0;
-    }
+  if (counter >= 10) {
+    counter = 0;
+  }
 }
