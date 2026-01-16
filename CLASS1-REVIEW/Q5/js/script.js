@@ -48,3 +48,13 @@ function checkOverlap() {
     pop();
   }
 }
+
+function mouseClicked() {
+    if (mouseX > square1.x &&
+        mouseX < square1.x + square1.size &&
+        mouseY > square1.y &&
+        mouseY < square1.y + square1.size) {
+           counter = counter + 1;
+           console.log(counter); 
+        }
+}
