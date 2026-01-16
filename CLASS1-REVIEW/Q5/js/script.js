@@ -3,7 +3,7 @@
 let counter = 0;
 
 // The overlapping starts off as false and changes when the mouse overlaps the square
-let overlapStatus = false;
+// let overlapStatus = false;
 
 // Radius of the middle circle
 let radius = {
@@ -34,6 +34,12 @@ function draw() {
   checkOverlap();
 
   drawEllipse();
+
+  resetCounter();
+
+//   while (// initialization goes here) {
+//     // Statement to be executed
+//   }
 }
 
 function drawSquare() {
@@ -67,8 +73,8 @@ function checkOverlap() {
     square(square1.x, square1.y, square1.size);
     pop();
 
-    let overlapStatus = true;
-    console.log(overlapStatus);
+    // let overlapStatus = true;
+    // console.log(overlapStatus);
   }
 }
 
@@ -84,4 +90,10 @@ function drawEllipse() {
   fill(ellipseAlpha);
   ellipse(width / 2, height / 2, radius.size);
   pop();
+}
+
+function resetCounter() {
+    if (counter >= 10) {
+        counter = 0;
+    }
 }
