@@ -35,4 +35,12 @@ function displayText() {
     text(i, i * 20, 100);
     pop();
   }
+
+  for (i = 0; i < 15; i++) {
+    push();
+    fill(test.color);
+    textSize(test.size);
+    text(i, 500, i * 30);
+    pop();
+  }
 }
