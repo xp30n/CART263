@@ -1,12 +1,11 @@
 "use strict";
 
 let test = {
-    textSize: 28,
-    fill: {
-        r: 255,
-        g: 255,
-        b: 255
-    }
+    text: "TEST",
+    size: 28,
+    color: 255,
+    x: 300,
+    y: 300
 }
 
 function setup() {
@@ -15,5 +14,15 @@ function setup() {
 
 function draw() {
     background(0);
+
+    displayText();
 }
 
+function displayText() {
+    push();
+    fill(test.color);
+    textSize(test.size);
+    textAlign(CENTER, CENTER);
+    text(test.text, test.x, test.y);
+    pop();
+}
