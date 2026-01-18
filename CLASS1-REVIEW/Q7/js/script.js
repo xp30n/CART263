@@ -25,7 +25,11 @@ function drawElllipses() {
 
   for (let x = 0; x <= width; x += 50) {
     for (let y = 0; y <= height; y += 50) {
-      ellipse(x, y, ellipseSize.w, ellipseSize.h);
+      if (mouseIsPressed) {
+        rect(x, y, 45, 45);
+      } else {
+        ellipse(x, y, ellipseSize.w, ellipseSize.h);
+      }
     }
   }
 }
@@ -37,3 +41,4 @@ function keyPressed() {
     b = random(255);
   }
 }
+
