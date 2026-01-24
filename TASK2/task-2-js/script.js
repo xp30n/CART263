@@ -102,13 +102,23 @@ replace the content (within the paragraph) to be an h2 element which contains th
 add to the existing content an h2 element containing the text `TEST 123`
 /*** let fourth = document.querySelectorAll("p");
  * 
- * fourth[3].
+ * fourth[3].textContent += " TEST 123";
  */
 
 /*************************************** */
 /* 6: Select the fifth paragraph element on the page and add to the existing content 
 an img element that holds `one.png`, and add the class newStyle to said paragraph element.
-/***CODE */
+/*** 
+ * let paras = document.querySelectorAll("p");
+ * let fifth = paras[4];
+ * 
+ * let img = document.createElement("img");
+ * img.src = "task-2-images/one.png";
+ * 
+ * fifth.appendChild(img);
+ * 
+ * fifth.classList.add("newStyle");
+ */
 
 
 /*************************************** */
@@ -118,7 +128,10 @@ Next, iterate over the colors array, and for each color:
 assign the element from innerContainers variable with the same index 
 (i.e. colors[0] should be allocated to the first innerContainers element, colors[1] to the second, etc ...) 
 a background using that color.
-/***CODE */
+
+/*** let colors = ['red','blue','green','orange'];
+ * 
+ */
 
 /*************************************** */
 /*** END PART TWO MODIFY */ 
