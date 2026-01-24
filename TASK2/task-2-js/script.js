@@ -8,7 +8,7 @@ console.log("we are a go!")
 /* 1: all paragraph elements */
 /***CODE */
 /***OUTPUT: 
- * 
+ * -> console.log(document.getElementsByTagName("p"));
  */
 
 
@@ -16,7 +16,7 @@ console.log("we are a go!")
 /* 2: only the first paragraph element */
 /***CODE */
 /***OUTPUT: 
- * 
+ * -> console.log(document.getElementById("1"));
  */
 
 
@@ -24,7 +24,7 @@ console.log("we are a go!")
 /* 3: all elements with the class inner-container */
 /***CODE */
 /***OUTPUT: 
- * 
+ * -> console.log(document.getElementByClassName("inner-container"));
  */
 
 
@@ -32,7 +32,7 @@ console.log("we are a go!")
 /* 4: the last image element inside the element that has the class img-container */
 /***CODE */
 /***OUTPUT: 
- * 
+ * -> console.log(document.getElemenyByClassName("img-image"));
  */
 
 
@@ -42,7 +42,9 @@ console.log("we are a go!")
 /* 5C: the text content of the first element in the list from 5A */
 /***CODE */
 /***OUTPUT: 
- * 
+ * a) -> console.log(document.getElementByTagName("h2"));
+ * b) -> console.log(document.getElementByTagName("h2").length);
+ * c) -> console.log(document.getElementByTagName("h2")[0]);
  */
 
 
@@ -50,7 +52,7 @@ console.log("we are a go!")
 /* 6: the element with id name parent */
 /***CODE */
 /***OUTPUT: 
- * 
+ * -> console.log(getElementById("parent"));
  */
 
 /*************************************** */
