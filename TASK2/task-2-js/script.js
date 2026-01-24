@@ -8,7 +8,8 @@ console.log("we are a go!")
 /* 1: all paragraph elements */
 /***CODE */
 /***OUTPUT: 
- * -> console.log(document.getElementsByTagName("p"));
+ * 
+ * -> console.log(document.querySelectorAll("p"));
  */
 
 
@@ -16,6 +17,7 @@ console.log("we are a go!")
 /* 2: only the first paragraph element */
 /***CODE */
 /***OUTPUT: 
+ * 
  * -> console.log(document.getElementById("1"));
  */
 
@@ -24,6 +26,7 @@ console.log("we are a go!")
 /* 3: all elements with the class inner-container */
 /***CODE */
 /***OUTPUT: 
+ * 
  * -> console.log(document.getElementByClassName("inner-container"));
  */
 
@@ -32,6 +35,7 @@ console.log("we are a go!")
 /* 4: the last image element inside the element that has the class img-container */
 /***CODE */
 /***OUTPUT: 
+ * 
  * -> console.log(document.getElemenyByClassName("img-image"));
  */
 
@@ -42,9 +46,10 @@ console.log("we are a go!")
 /* 5C: the text content of the first element in the list from 5A */
 /***CODE */
 /***OUTPUT: 
+ * 
  * a) -> console.log(document.getElementByTagName("h2"));
  * b) -> console.log(document.getElementByTagName("h2").length);
- * c) -> console.log(document.getElementByTagName("h2")[0]);
+ * c) -> console.log(document.getElementByTagName("h2").textContent);
  */
 
 
@@ -52,6 +57,7 @@ console.log("we are a go!")
 /* 6: the element with id name parent */
 /***CODE */
 /***OUTPUT: 
+ * 
  * -> console.log(getElementById("parent"));
  */
 
@@ -63,25 +69,41 @@ console.log("we are a go!")
 /*** START PART TWO MODIFY */ 
 /*************************************** */
 /* 1: Select the first paragraph and replace the text within the paragraph... */
-/***CODE */
+
+/*** document.getElementById("1").textContent = "Text changed by Aliyah on Sat, Jan 24th, 2026";
+ */ 
 /*************************************** */
 /* 2: Select all elements in the HTML that have the class name content-container
  and change the background color ... of first and second ...*/
-/***CODE */
+
+/*** let containters = document.querySelectorAll(".content-container");
+ * 
+ * containers[1].style.background = "orange";
+ * containers[2].style.background = "purple";
+ */
 
 /*************************************** */
 /* 3: Change the src element of the first image element on the page to be ...
-/***CODE */
+
+/*** let seven = document.querySelector("img");
+ * img[0].src = "images/seven.png";
+ */
 
 /*************************************** */
 /* 4: Select the third paragraph element on the page and 
 replace the content (within the paragraph) to be an h2 element which contains the text `TEST 123`
-/***CODE */
+
+/*** let test123 = document.querySelectorAll("p");
+ * test123[2].textContent = "<h2>TEST 123</h2>"
+ */
 
 /*************************************** */
 /* 5: Select the fourth paragraph element on the page and 
 add to the existing content an h2 element containing the text `TEST 123`
-/***CODE */
+/*** let fourth = document.querySelectorAll("p");
+ * 
+ * fourth[3].
+ */
 
 /*************************************** */
 /* 6: Select the fifth paragraph element on the page and add to the existing content 
