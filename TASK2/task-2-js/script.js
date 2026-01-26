@@ -72,11 +72,12 @@ console.log("we are a go!")
 
 /*** document.getElementById("1").textContent = "Text changed by Aliyah on Sat, Jan 24th, 2026";
  */ 
+
 /*************************************** */
 /* 2: Select all elements in the HTML that have the class name content-container
  and change the background color ... of first and second ...*/
 
-/*** let containters = document.querySelectorAll(".content-container");
+/*** let containers = document.querySelectorAll(".content-container");
  * 
  * containers[1].style.background = "orange";
  * containers[2].style.background = "purple";
@@ -85,8 +86,8 @@ console.log("we are a go!")
 /*************************************** */
 /* 3: Change the src element of the first image element on the page to be ...
 
-/*** let seven = document.querySelector("img");
- * img[0].src = "images/seven.png";
+/*** let imgs = document.querySelectorAll(".img-image");
+ imgs[0].src = "task-2-images/seven.png";
  */
 
 /*************************************** */
@@ -94,8 +95,8 @@ console.log("we are a go!")
 replace the content (within the paragraph) to be an h2 element which contains the text `TEST 123`
 
 /*** let test123 = document.querySelectorAll("p");
- * test123[2].textContent = "<h2>TEST 123</h2>"
- */
+ * test123[2].textContent = "TEST 123"
+ */ 
 
 /*************************************** */
 /* 5: Select the fourth paragraph element on the page and 
@@ -104,7 +105,6 @@ add to the existing content an h2 element containing the text `TEST 123`
  * 
  * fourth[3].textContent += " TEST 123";
  */
-
 /*************************************** */
 /* 6: Select the fifth paragraph element on the page and add to the existing content 
 an img element that holds `one.png`, and add the class newStyle to said paragraph element.
@@ -129,7 +129,7 @@ assign the element from innerContainers variable with the same index
 (i.e. colors[0] should be allocated to the first innerContainers element, colors[1] to the second, etc ...) 
 a background using that color.
 
-/*** let colors = ['red','blue','green','orange'];
+/*** let colors = ['red','blue','green','orange']; 
  * 
  */
 
@@ -178,7 +178,7 @@ passing the current allPTagsThree element as the parent with each iteration.*/
 /* 2H: BONUS II: For every div in an even numbered row make it contain the text `EVEN`, 
     otherwise lat it have the content `ODD`.*/
 
-/***CODE */
+/***  */
 
 
 /***EXPLANATION::
@@ -212,8 +212,5 @@ passing the current allPTagsThree element as the parent with each iteration.*/
 /*** END PART THREE CREATE */ 
 /*************************************** */
     
-
-
-
 
 }
