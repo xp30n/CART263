@@ -150,8 +150,21 @@ a background using that color.
 /* 1G: Append this new element to the parent variable within the function. */
 /* 1H: Iterate through the allPTagsThree array and call customCreateElement(), 
 passing the current allPTagsThree element as the parent with each iteration.*/
-/***CODE */
-
+/***
+ * let allPTagsThree = document.querySelectorAll("p");
+ * 
+ * function customCreateElement(parent) {
+ *  let newParagraph = document.createElement("p");
+ *  newParagraph.textContent = "Using Create Element";
+ *  newParagraph.style.backgroundColor = "green";
+ *  newParagraph.style.color = "white";
+ *  parent.appendChild(newParagraph);
+ * }
+ * 
+ * for (let i = 0; i < allPTagsThree.length); i++) {
+ *      customCreateElement(allPTagsThree[i]);
+ * }
+ */
 
 /***EXPLANATION::
  * 
