@@ -167,7 +167,7 @@ passing the current allPTagsThree element as the parent with each iteration.*/
  */
 
 /***EXPLANATION::
- * 
+ *  This creates a small line of text under each paragraph with a green background and white text color !! 
  * 
  */
 
@@ -191,12 +191,33 @@ passing the current allPTagsThree element as the parent with each iteration.*/
 /* 2H: BONUS II: For every div in an even numbered row make it contain the text `EVEN`, 
     otherwise lat it have the content `ODD`.*/
 
-/***  */
+/***CODE*/
 
+let gridParent = document.querySelector("#new-grid");
+
+for (let x = 0; x < 10; x++) {
+    for (let y = 0; y < 10; y++) {
+       let returnedDiv = customNewBoxCreate(gridParent);
+
+        returnedDiv.style.left = x * 45 + "px";
+        returnedDiv.style.top = y * 45 + "px";
+    }
+}
+
+function customNewBoxCreate(parent) {
+    let newDiv = document.createElement("div");
+    newDiv.classList.add("testDiv");
+    parent.appendChild(newDiv);
+
+    return newDiv;
+}
+
+let newTestDiv = document.querySelectorAll(".testDiv");
+console.log(newTestDiv);
 
 /***EXPLANATION::
  * 
- * 
+ * The first part of the code creates a 10x10 grid of evenly spaced squares with the names "test-div", and the newTestDiv logs all of the squares with the class name test-div.
  */
 
 /*************************************** */
