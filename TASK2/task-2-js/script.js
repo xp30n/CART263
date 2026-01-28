@@ -18,7 +18,7 @@ console.log("we are a go!")
 /***CODE */
 /***OUTPUT: 
  * 
- * -> console.log(document.getElementById("1"));
+ * -> document.querySelector("p"));
  */
 
 
@@ -36,7 +36,7 @@ console.log("we are a go!")
 /***CODE */
 /***OUTPUT: 
  * 
- * -> console.log(document.getElemenyByClassName("img-image"));
+ * -> console.log(document.getElemenyByClassName("img-container").length - 1);
  */
 
 
@@ -79,14 +79,15 @@ console.log("we are a go!")
 
 /*** let containers = document.querySelectorAll(".content-container");
  * 
- * containers[1].style.background = "orange";
- * containers[2].style.background = "purple";
+ * containers[0].style.background = "orange";
+ * containers[1].style.background = "purple";
  */
 
 /*************************************** */
 /* 3: Change the src element of the first image element on the page to be ...
 
-/*** let imgs = document.querySelectorAll(".img-image");
+/*** 
+ let imgs = document.querySelectorAll(".img-image");
  imgs[0].src = "task-2-images/seven.png";
  */
 
@@ -201,6 +202,11 @@ for (let x = 0; x < 10; x++) {
 
         returnedDiv.style.left = x * 45 + "px";
         returnedDiv.style.top = y * 45 + "px";
+
+        if (x %2 == 0) {
+            returnedDiv.style.backgroundColor = "white";
+            returnedDiv.style.backgroundColor = "purple"
+        }
     }
 }
 
@@ -212,14 +218,9 @@ function customNewBoxCreate(parent) {
     return newDiv;
 }
 
-let newTestDiv = document.querySelectorAll(".testDiv");
-console.log(newTestDiv);
-
 /***EXPLANATION::
  * 
- * The first part of the code creates a 10x10 grid of evenly spaced squares with the names "test-div", and the newTestDiv logs all of the squares with the class name test-div.
- */
-
+ * The first part of the code creates a 10x10 grid of evenly spaced squares with the names "test-div"
 /*************************************** */
 /* 3: GRID OF BOXES II */
 
