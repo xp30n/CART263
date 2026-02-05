@@ -7,7 +7,7 @@ function setup() {
 
   // let introSection = document.querySelector("#intro");
 
-  // // to allow this specific section to become clickable - no need for collision detection !
+  // to allow this specific section to become clickable - no need for collision detection !
   // introSection.addEventListener("click", mouseClickCallback);
 
   // the mouseClickCallback is a function that we are creating - Make sure not to add the parentheses after calling the function, because then it would run automatically and not only during the event!
@@ -44,7 +44,7 @@ function setup() {
       let classToAdd = `#${idOfThis}-section-active`;
       this.classList.add(classToAdd);
       let classToAddP = `#${idOfThis}-section-p-active`;
-    //   child.classList.add(classToAddP);
+      //   child.classList.add(classToAddP);
       console.log(this.getAttribute("custom-bool"));
       this.setAttribute("custom-bool", "active");
     } else {
@@ -52,12 +52,12 @@ function setup() {
       let classToAdd = `#${idOfThis}-section-active`;
       this.classList.remove(classToAdd);
       let classToAddP = `#${idOfThis}-section-p-active`;
-    //   child.classList.remove(classToAddP);
+      //   child.classList.remove(classToAddP);
       console.log(this.getAttribute("custom-bool"));
       this.setAttribute("custom-bool", "active");
       this.setAttribute("custom-bool", "inactive");
 
-      //this block of code basically sets the elements with the "inactive" class to "active", and otherwise removes the "active" status !! 
+      //this block of code basically sets the elements with the "inactive" class to "active", and otherwise removes the "active" status !!
     }
   }
 

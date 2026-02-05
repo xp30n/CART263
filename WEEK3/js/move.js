@@ -13,7 +13,7 @@ window.onload = function(){
 
     function mouseMoveFunction(eventObj) {
         console.log("Are you sure?") // "Guess who finally got his powers? (˵ ¬ᴗ¬˵)"
-        console.log(eventObj); // <-- this shows the information relating to the event and it can tell you where the x and y is of the mouse 
+       // console.log(eventObj); // <-- this shows the information relating to the event and it can tell you where the x and y is of the mouse 
         // this.innerHTML = `x: ${eventObj.clientX}, y:${eventObj.clientY}`; <-- this displays the x and y coordinates within the box
 
         // DIFFERENCE TO ENSURE COORDS ARE RELATIVE
