@@ -5,6 +5,3 @@ Course: CART 263 [WINTER 2026]<br>
 Student: [Aliyah Renomeron-Ward]
 
 This repo contains exercises, experiments, and small projects created for this class
-
-### 💽 Projects & Assignments
-... Coming Soon. 
