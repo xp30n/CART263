@@ -22,23 +22,37 @@ function setup_A() {
    * Do not change any code above or the HTML markup.
    * **/
 
-  let mouseX;
-  let mouseY;
+
 
   function aniA(parentCanvas) {
     console.log("in ani-A -teamA");
+  
   }
-
-  // ! Function to track the movement of the mouse within the canvas
-  function mouseMove() {
-    // nothing here yet
-  }
-
-
-
 
   function aniB(parentCanvas) {
     console.log("in ani-B -teamA");
+
+    document.addEventListener("mousemove", mouseMove);
+
+    function mouseMove(eventObj) {
+      //get the rendered bounding Box of parent and use the width and height
+      let boundingBoxParent = parentCanvas.getBoundingClientRect();
+      // console.log(boundingBoxParent);
+  
+      // To track the mouse positions
+      let offsetX = eventObj.clientX - boundingBoxParent.x;
+      let offsetY = eventObj.clientY - boundingBoxParent.y;
+  
+      // if statement to keep the log from checking outside of bounds
+      if (
+        offsetX >= 0 &&
+        offsetX <= boundingBoxParent.width &&
+        offsetY >= 0 &&
+        offsetY <= boundingBoxParent.height
+      ) {
+        console.log("MOUSE IS MOVING");
+      }
+    }
   }
   /****************ANI C ************************************ */
   /** PUT ALL YOUR CODE FOR INTERACTIVE PATTERN C INSIDE HERE */
