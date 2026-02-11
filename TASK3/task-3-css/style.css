@@ -59,7 +59,7 @@ body{
 
   .teamCanvas p:hover{
     border:2px;
-    background:white;
+    background:rgb(255, 255, 255);
     border-style:solid;
     border-color: rgba(246, 15, 142,1.0);
     background:white;
@@ -88,13 +88,14 @@ body{
 
   .aniCanvas{
     border:2px;
-    background:white;
+    background:rgb(255, 255, 255);
     border-style:solid;
     border-color: rgba(246, 15, 142,1.0);
     width:375px;
     height:375px;
     margin:0 auto;
     position:relative;
+    overflow: hidden;
   }
 
   .active-button{
@@ -161,3 +162,9 @@ body{
   border-radius:10px;
   transform: translate(-50%, -50%);
 }
+
+.arrow-heart {
+  position: absolute;
+  pointer-events: none;
+}
+

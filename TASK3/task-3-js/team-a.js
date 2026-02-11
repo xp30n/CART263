@@ -50,20 +50,21 @@ function setup_A() {
         offsetY >= 0 &&
         offsetY <= boundingBoxParent.height
       ) {
-        console.log("SPAWN")
-        createHearts();
+        createHearts(offsetX, offsetY);
       }
     }
 
     // function to create the heart
-    function createHearts() {
+    function createHearts(offsetX, offsetY) {
       let heart = document.createElement("div");
       heart.className = "arrow-heart";
       heart.textContent = "💘 ";
-      document.querySelector("#ani_canvA_B").appendChild(heart);
-      console.log("created heart")
+      heart.style.left = offsetX + "px";
+      heart.style.top = offsetY + "px";
+      parentCanvas.appendChild(heart);
     }
   }
+
   /****************ANI C ************************************ */
   /** PUT ALL YOUR CODE FOR INTERACTIVE PATTERN C INSIDE HERE */
   /****************ANI C************************************ */
