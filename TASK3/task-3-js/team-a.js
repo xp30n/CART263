@@ -50,8 +50,18 @@ function setup_A() {
         offsetY >= 0 &&
         offsetY <= boundingBoxParent.height
       ) {
-        console.log("MOUSE IS MOVING");
+        console.log("SPAWN")
+        createHearts();
       }
+    }
+
+    // function to create the heart
+    function createHearts() {
+      let heart = document.createElement("div");
+      heart.className = "arrow-heart";
+      heart.textContent = "💘 ";
+      document.querySelector("#ani_canvA_B").appendChild(heart);
+      console.log("created heart")
     }
   }
   /****************ANI C ************************************ */
