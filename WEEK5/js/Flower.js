@@ -1,12 +1,12 @@
 // ! this is not a function. This is considered a method (or a function within an object)
 class Flower {
-  constructor() {
+  constructor(x,y,size,stemLength,petalColor) {
     // You need a constructor in yout class in order to create other stuff in the future
     // Position and size information
-    ((this.x = Math.random() * window.innerWidth), // using "this" is the proper way to display the properties
-      (this.y = Math.random() * 120),
-      (this.size = 40),
-      (this.stemLength = 75),
+    ((this.x = x), // using "this" is the proper way to display the properties
+      (this.y = y),
+      (this.size = size),
+      (this.stemLength = stemLength),
       (this.stemThickness = 10),
       (this.petalThickness = 8),
       (this.flowerStemDiv = document.createElement("div")),
@@ -17,11 +17,8 @@ class Flower {
         g: 150,
         b: 50,
       }),
-      (this.petalColor = {
-        r: 200,
-        g: 50,
-        b: 50,
-      }),
+      (this.petalColor = petalColor),
+      
       (this.centreColor = {
         r: 50,
         g: 0,

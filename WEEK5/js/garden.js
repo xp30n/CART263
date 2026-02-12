@@ -75,17 +75,25 @@ window.onload = function () {
 
   createAndRenderTheGarden();
 
-  let flower = new Flower();
+  //   let flower = new Flower();
+  //   flower.renderFlower();
 
-  flower.renderFlower();
+  //   add numFlowers at one time
+  for (let i = 0; i < garden.numFlowers; i++) {
+    let x = Math.random() * (window.innerWidth - 100);
+    let y = Math.random() * 120;
+    let size = Math.random() * 30 + 50;
+    let stemLength = Math.random() * 50 + 50;
+    let petalColor = {
+      r: parseInt(Math.random() * 155) + 100,
+      g: parseInt(Math.random() * 155) + 100,
+      b: parseInt(Math.random() * 155) + 100,
+    };
 
-  // add numFlowers at one time
-//   for (let i = 0; i < garden.numFlowers; i++) {
-//           garden.flowers.push(createFlower());
-//     }
-   
-//      for (let i =0; i< garden.flowers.length; i++){
-//        renderFlower(garden.flowers[i]);
-  
-//      }
+    garden.flowers.push(new Flower(x, y, size, stemLength, petalColor));
+
+    for (let i = 0; i < garden.flowers.length; i++) {
+      garden.flowers[i].renderFlower();
+    }
+  }
 };
