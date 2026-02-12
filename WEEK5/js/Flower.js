@@ -1,6 +1,6 @@
 // ! this is not a function. This is considered a method (or a function within an object)
 class Flower {
-  constructor(x,y,size,stemLength,petalColor) {
+  constructor(x, y, size, stemLength, petalColor) {
     // You need a constructor in yout class in order to create other stuff in the future
     // Position and size information
     ((this.x = x), // using "this" is the proper way to display the properties
@@ -18,12 +18,21 @@ class Flower {
         b: 50,
       }),
       (this.petalColor = petalColor),
-      
       (this.centreColor = {
         r: 50,
         g: 0,
         b: 0,
       }));
+
+      let self = this; // This is just a reference to the actual object so that you can use those properties in the function below
+
+      this.flowerStemDiv.addEventListener("click", growStem);
+
+      function growStem(e) {
+        console.log("clicked");
+        console.log(self);
+        console.log(self.y);
+      }
   }
 
   //render method
