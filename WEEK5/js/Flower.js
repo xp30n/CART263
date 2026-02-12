@@ -24,15 +24,25 @@ class Flower {
         b: 0,
       }));
 
-      let self = this; // This is just a reference to the actual object so that you can use those properties in the function below
+    let self = this; // This is just a reference to the actual object so that you can use those properties in the function below
 
-      this.flowerStemDiv.addEventListener("click", growStem);
+    this.flowerStemDiv.addEventListener("click", growStem);
 
-      function growStem(e) {
-        console.log("clicked");
-        console.log(self);
-        console.log(self.y);
-      }
+    function growStem(e) {
+      console.log("clicked");
+      console.log(self);
+      console.log(self.y);
+
+      self.stemLength = self.stemLength + 10;
+
+      //update the actual div...
+      self.flowerStemDiv.style.height = self.stemLength + "px";
+      self.flowerStemDiv.style.top = self.y - self.stemLength + "px";
+
+      // and also the petal element needs to move up
+      self.flowerPetalDiv.style.top =
+        self.y - self.stemLength - self.size / 2 + "px";
+    }
   }
 
   //render method

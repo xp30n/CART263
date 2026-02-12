@@ -30,17 +30,19 @@ window.onload = function () {
       skyDiv: document.createElement("div"),
     },
 
-    /*sun object */
-    sun: {
-      sunColor: {
-        r: 240,
-        g: 206,
-        b: 83,
-      },
-      //the sun element
-      sunDiv: document.createElement("div"),
-    },
+    // /*sun object */
+    // sun: {
+    //   sunColor: {
+    //     r: 240,
+    //     g: 206,
+    //     b: 83,
+    //   },
+    //   //the sun element
+    // //   sunDiv: document.createElement("div"),
+    // },
   };
+
+  let sun =  new Sun(10,10,{r: 240, g: 206,b: 83});
 
   function createAndRenderTheGarden() {
     /* note how we use dot notation....*/
@@ -53,15 +55,15 @@ window.onload = function () {
         )`;
     document.getElementsByTagName("main")[0].appendChild(garden.sky.skyDiv);
 
-    //sun - IN the sky
-    garden.sun.sunDiv.classList.add("sun");
-    garden.sun.sunDiv.style.background = `rgb(
-        ${garden.sun.sunColor.r},
-        ${garden.sun.sunColor.g},
-        ${garden.sun.sunColor.b}
-        )`;
+    // //sun - IN the sky
+    // garden.sun.sunDiv.classList.add("sun");
+    // garden.sun.sunDiv.style.background = `rgb(
+    //     ${garden.sun.sunColor.r},
+    //     ${garden.sun.sunColor.g},
+    //     ${garden.sun.sunColor.b}
+    //     )`;
     //append to the SKY div
-    document.getElementsByClassName("sky")[0].appendChild(garden.sun.sunDiv);
+    // document.getElementsByClassName("sky")[0].appendChild(garden.sun.sunDiv);
 
     //grass
     garden.grass.grassDiv.classList.add("grass");
@@ -95,5 +97,17 @@ window.onload = function () {
     for (let i = 0; i < garden.flowers.length; i++) {
       garden.flowers[i].renderFlower();
     }
+
+    sun.renderSun();
+
+    window.addEventListener("keydown", 
+        function handleKeydown(event) {
+            // console.log(event.key); 
+            sun.handleKeyEvent(event);
+        }
+    )
   }
+
 };
+
+
