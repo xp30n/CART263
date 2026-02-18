@@ -12,10 +12,10 @@ class Sun{
 }
 
     renderSun(){
-    // //sun - IN the sky
+    //sun - IN the sky
     this.sunDiv.classList.add("sun");
     this.sunDiv.style.background = `rgb(${this.sunColor.r},${this.sunColor.g},${this.sunColor.b})`;
-    // //append to the SKY div
+    //append to the SKY div
     document.querySelector(".sky").appendChild(this.sunDiv);
     }
 

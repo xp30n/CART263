@@ -1,30 +1,33 @@
-class Dog {
+class Dog extends Animal { // this is how you call the properties from the animal.js file (the x, the y, the width) 
     // Create a new Dog object that moves to the right
     constructor(x, y, width, height) { // ! constructors stores the variables when we create an object!
-      this.x = x;
-      this.y = y;
-      this.width = width;
-      this.height = height;
+
+        super(x, y, width, height);
+
+    //   this.x = x;
+    //   this.y = y;
+    //   this.width = width;
+    //   this.height = height;
       this.vx = Math.random() * 5 + 1;
       this.vy = 0;
       this.animalBody = document.createElement("div");
     }
   
     // Move the Dog according to its velocity
-    move() {
-      this.x += this.vx;
-      this.y += this.vy;
-      //update the actual div...
-      this.animalBody.style.left = this.x + "px";
-      this.animalBody.style.top = this.y + "px";
-    }
+    // move() {
+    //   this.x += this.vx;
+    //   this.y += this.vy;
+    //   //update the actual div...
+    //   this.animalBody.style.left = this.x + "px";
+    //   this.animalBody.style.top = this.y + "px";
+    // }
   
     // Wrap the dog if it reaches the right edge
-    wrap() {
-      if (this.x > window.innerWidth) {
-        this.x -= window.innerWidth;
-      }
-    }
+    // wrap() {
+    //   if (this.x > window.innerWidth) {
+    //     this.x -= window.innerWidth;
+    //   }
+    // }
   
     // Display the dog as a ellipse
     renderAnimal() {
