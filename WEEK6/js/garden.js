@@ -1,6 +1,16 @@
-window.onload = function (){
-// Our garden
-let garden = {
+window.onload = function () {
+  // Our garden
+  let garden = {
+    // an array to store the individual dogs
+    dogs: [],
+    // how many dogs in the garden
+    numDogs: 10,
+
+    // an array to store the individual birds
+    birds: [],
+    // How many birds in the garden
+    numBirds: 10,
+
     /*grass object */
     grass: {
       // The color of the grass (background)
@@ -12,7 +22,7 @@ let garden = {
       //the grass element
       grassDiv: document.createElement("div"),
     },
- 
+
     /*sky object */
     sky: {
       // The color of the sky (background)
@@ -26,7 +36,7 @@ let garden = {
     },
   };
   // new  sun instancce
-  let sun =  new Sun(10,10,{r: 240, g: 206,b: 83})
+  let sun = new Sun(10, 10, { r: 240, g: 206, b: 83 });
 
   function createAndRenderTheGarden() {
     /* note how we use dot notation....*/
@@ -41,11 +51,63 @@ let garden = {
     garden.grass.grassDiv.classList.add("grass");
     garden.grass.grassDiv.style.background = `rgb(${garden.grass.grassColor.r},${garden.grass.grassColor.g},${garden.grass.grassColor.b})`;
     document.getElementsByTagName("main")[0].appendChild(garden.grass.grassDiv);
-
-    
-
   }
-  createAndRenderTheGarden();
-}
 
-  
+  function createDogs() {
+    // Create the correct number of dogs and put them in our array
+    for (let i = 0; i < garden.numDogs; i++) {
+      let x = Math.random() * window.innerWidth;
+      let y = Math.random() * 100;
+      let dog = new Dog(x, y, 15, 15); // ! the constructor gets called with you use the keyword new - this is basically how you call the constructor
+      garden.dogs.push(dog);
+    }
+  }
+
+  function renderAnimals() {
+    // Go through all the animals and move, wrap, and display them
+    for (let i = 0; i < garden.dogs.length; i++) {
+      let dog = garden.dogs[i];
+      dog.renderAnimal();
+    }
+
+    // Go through all the birds and move, wrap, and display them
+    for (let i = 0; i < garden.birds.length; i++) {
+      let bird = garden.birds[i];
+      bird.renderAnimal();
+    }
+  }
+
+  function createBirds() {
+    //create some birds
+    for (let i = 0; i < garden.numBirds; i++) {
+      let x = Math.random() * window.innerWidth;
+      let y = Math.random() * 100;
+      let bird = new Bird(x, y, 15, 15);
+      garden.birds.push(bird);
+    }
+  }
+
+  createAndRenderTheGarden();
+  createDogs();
+  createBirds();
+  renderAnimals();
+
+  window.requestAnimationFrame(updateGarden);
+
+  function updateGarden() {
+    // Go through all the animals and move, wrap, and display them
+    for (let i = 0; i < garden.dogs.length; i++) {
+      let dog = garden.dogs[i];
+      dog.move();
+      dog.wrap();
+    }
+
+    // Go through all the birds and move, wrap, and display them
+    for (let i = 0; i < garden.birds.length; i++) {
+      let bird = garden.birds[i];
+      bird.move();
+      bird.wrap();
+    }
+    window.requestAnimationFrame(updateGarden); // This function needs to be called twice, because otherwise it won't repeatedly animate, and you'd have to keep calling the function
+  }
+};
