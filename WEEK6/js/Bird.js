@@ -29,6 +29,21 @@ class Bird extends Animal {
     }
   }
 
+  // Overriding the superclass' wrap() method!
+  wrap() {
+    // NEW! Call the superclass (Animal) version of wrap()
+    // This will handle wrapping on the x axis for us.
+    // We use "super" to access methods in the SUPERclass (Animal)
+    // So this calls the Animal version of wrap() after we make the specific changes 
+    // in the SUBclass.
+   
+    if (this.x > window.innerWidth) {
+      //reset
+      this.vy = 0;
+    }
+     super.wrap();
+   }
+
   // Move the bird according to its velocity
   // move() {
   //   this.x += this.vx;

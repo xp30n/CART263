@@ -95,6 +95,15 @@ window.onload = function () {
   window.requestAnimationFrame(updateGarden);
 
   function updateGarden() {
+
+    // if the first dog is set to jump
+    if(garden.dogs[0].isjumping === true){
+      // console.log("jump")
+      garden.dogs[0].updateJump()
+      for (let i = 0; i < garden.birds.length; i++) {
+        garden.dogs[0].catchBird(garden.birds[i])
+      }
+    }
     // Go through all the animals and move, wrap, and display them
     for (let i = 0; i < garden.dogs.length; i++) {
       let dog = garden.dogs[i];
@@ -110,4 +119,15 @@ window.onload = function () {
     }
     window.requestAnimationFrame(updateGarden); // This function needs to be called twice, because otherwise it won't repeatedly animate, and you'd have to keep calling the function
   }
-};
+
+  window.addEventListener("keydown", function(e) {
+    if (e.code === "Space") {   
+      e.preventDefault(); // prevents the window from doing the default action when the spacebar is pressed (going down the page) so that we can use the custom function 
+      for (let i = 0; i < garden.dogs.length; i++) {
+        if(garden.dogs[0].isjumping === false){
+          garden.dogs[0].jump()   
+      }
+      }
+    }
+  })
+}; 
