@@ -99,6 +99,7 @@ let garden = {
   *
 */
 
+
   /*** TEAM C AND D NEED TO COORDINATE
 
 /**TEAM C -- SQUIRRELS
