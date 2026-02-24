@@ -39,3 +39,8 @@ body{
     position:absolute;
     border-style:solid;
 }
+
+.beehive-img {
+    z-index: 300;
+    position: absolute;
+}
