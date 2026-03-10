@@ -1,4 +1,9 @@
 window.onload = function () {
+  let lightOn = false;
+  let charState = "sit";
+  let charIndex = 0;
+  const FADE_TIME = 400;
+  let charAnimating = false;
   let layout = {
     background: {
       div: document.createElement("div"),
@@ -6,68 +11,140 @@ window.onload = function () {
     },
     box: {
       el: document.createElement("img"),
-      id: "box-img"
     },
     grid: {
       el: document.createElement("img"),
-      id: "grid-img"
     },
 
     lights: {
       el: document.createElement("img"),
+      // For the sources I'm thinking of adding them to an array so its  stored in just one variable
       offSrc: "/images/light-on.png",
       onSrc: "/images/light-on.png",
-      id: "lights"
+      srcPaths: ["images/light-off.png", "images/light-on.png"],
+      image: "",
     },
     dispenser: {
       el: document.createElement("img"),
-      id: "dispenser-img"
     },
     heart: {
       el: document.createElement("img"),
-      id: "heart-img"
     },
     button: {
       el: document.createElement("img"),
-      id: "btn-img"
     },
     character: {
       el: document.createElement("img"),
-      id: "char-img"
+      srcPaths: [
+        "images/character-sit.png",
+        "images/character-stand.png",
+        "images/character-push.png",
+        "images/character-pick.png",
+      ],
+      image: "",
     },
-
   };
-
-  // Add to DOM
+  let notifBtnId = this.document.querySelector("#notify");
+  notifBtnId.addEventListener("click", mouseClickNotif);
+  console.log(notifBtnId, lightOn);
+  /**
+   * Checks when the notif button is clicked
+   */
+  function mouseClickNotif() {
+    lightOn = !lightOn;
+    updateLight();
+    layout.lights.el.src = layout.lights.image;
+    // Checks the character animation
+    if (charState === "sit" && lightOn && !charAnimating) {
+      charState = "stand";
+      charAnimating = true;
+      cycleCharacter();
+    }
+  }
+  /**
+   * Changes light image to On or Off
+   */
+  function updateLight() {
+    if (lightOn) {
+      layout.lights.image = layout.lights.srcPaths[1];
+    } else {
+      layout.lights.image = layout.lights.srcPaths[0];
+    }
+  }
+  /**
+   * Add images to the DOM
+   */
   function renderlayout() {
     // bg
     layout.background.div.classList.add("layout");
     layout.background.image.src = "images/background.png";
     layout.background.div.appendChild(layout.background.image);
     document.getElementsByTagName("main")[0].appendChild(layout.background.div);
-    //box
+    //box // right here
     layout.box.el.src = "images/box.png";
+    layout.box.el.id = "box";
+
+    /**
+     * LEON GOONER #1 AREA ❤️
+     */
+
     document.querySelector(".layout").appendChild(layout.box.el);
     //electric grid
     layout.grid.el.src = "images/electric-grid.png";
+    layout.grid.el.id = "grid";
     document.querySelector(".layout").appendChild(layout.grid.el);
 
-    // light off
-    layout.lights.el.src = "images/light-off.png";
+    // light
+    layout.lights.el.src = layout.lights.image;
+    layout.lights.el.id = "light";
     document.querySelector(".layout").appendChild(layout.lights.el);
-
+    /**
+     * LEON GOONER #2 AREA 😋 // I think we should leave these comments in they're so funny LMFAO PLSKDSJDJ
+     */
     //dispenser
     layout.dispenser.el.src = "images/dispenser.png";
+    layout.dispenser.id = "dispenser";
     document.querySelector(".layout").appendChild(layout.dispenser.el);
     //heart
     layout.heart.el.src = "images/heart.png";
+    layout.heart.id = "heart";
     document.querySelector(".layout").appendChild(layout.heart.el);
     //button
     layout.button.el.src = "images/button-unpressed.png";
+    layout.button.id = "push-button";
     document.querySelector(".layout").appendChild(layout.button.el);
     //character
     layout.character.el.src = "images/character-sit.png";
+    layout.character.el.id = "char";
     document.querySelector(".layout").appendChild(layout.character.el);
   }
-  renderlayout();
+  /**
+   * Cycle through character animation
+   */
+  function cycleCharacter() {
+    // stop at the last state (pick)
+    if (charIndex === layout.character.srcPaths.length - 1) {
+      charState = "pick";
+      charAnimating = false;
+      return;
+    }
+    console.log(charIndex);
+    // fade out
+    layout.character.el.style.opacity = 0;
+
+    setTimeout(() => {
+      // go to next state
+      charIndex++;
+      // change image after fade out
+      layout.character.el.src = layout.character.srcPaths[charIndex];
+      const states = ["sit", "stand", "push", "pick"];
+      charState = states[charIndex];
+      // fade in
+      char.style.opacity = 1;
+      // continue animation
+      setTimeout(cycleCharacter, FADE_TIME);
+    }, FADE_TIME); // same time as CSS transition
+  }
 };
+updateLight();
+renderlayout();
