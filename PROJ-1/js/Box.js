@@ -6,28 +6,36 @@ window.onload = function () {
     },
     box: {
       el: document.createElement("img"),
+      id: "box-img"
     },
     grid: {
       el: document.createElement("img"),
+      id: "grid-img"
     },
 
     lights: {
       el: document.createElement("img"),
       offSrc: "/images/light-on.png",
       onSrc: "/images/light-on.png",
+      id: "lights"
     },
     dispenser: {
       el: document.createElement("img"),
+      id: "dispenser-img"
     },
     heart: {
       el: document.createElement("img"),
+      id: "heart-img"
     },
     button: {
       el: document.createElement("img"),
+      id: "btn-img"
     },
     character: {
       el: document.createElement("img"),
+      id: "char-img"
     },
+
   };
 
   // Add to DOM
