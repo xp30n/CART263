@@ -145,6 +145,6 @@ window.onload = function () {
       setTimeout(cycleCharacter, FADE_TIME);
     }, FADE_TIME); // same time as CSS transition
   }
-};
-updateLight();
+  updateLight();
 renderlayout();
+};
