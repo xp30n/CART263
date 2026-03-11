@@ -17,6 +17,22 @@ First we will talk about our inspiration for this project. On one hand, In The G
 
 On the other hand, we explored idea about the biases behind data collection using the knowledge we received after reading the Guardian Interview with Catherine D’Ignazio by Zoë Corbyn. In this interview the key takeaway we got was that data is never neutral, “it is information that has been collected in certain ways by certain actors and institutions for certain reasons”​ (Corbyn 2020)​. A powerful quote by Catherine D’Ignazio spoke out to us: “numbers should never be allowed to “speak for themselves” because they don’t tell the whole story when there are power imbalances in the collection environment.”​ (Corbyn 2020)​. We connected this idea to how our humanity is reduced to numbers on social media. On social media platforms, our likes, comments and shares are reduced to data that do only benefit institutions that make profit through selling our data. These numbers don’t tell the full story and other data such as the other activities we missed out by being online shows how biased data compilation is and emphasizes who truly benefits from the data being collected.
 
+### PROCES:
+Our main goal for this project was to create something that reflected the addiction many people have problems with today which is the consumption of social media and its reward systems. While the final project does reflect that, our initial ideas have changed as time went on.  
+
+Our first ideas were to create a social media game that would eventually make the character addicted to the screen and keep them from doing actual important tasks, such as cooking, cleaning, or spending time with friends, which quickly morphed into the idea of using Skinner’s Box.  
+
+We had concept for gameplay that stuck with us until the end, which includes a singular character within a small room, AI movement, and UI/UX elements that make the character approach the wall. One of the bigger challenges we faced was trying to decide how we wanted the game to function and incorporating that into our code. We wanted the character’s behavior to feel autonomous at some point in the game, rather than constantly having them controlled by the player. This led us to implement different game states, animations and randomized reward and penalty systems. Another part that was tricky was managing these concepts/elements to keep them coherent with the flow of the game.  
+
+### PROJECT DESCRIPTION:
+As previously mentioned, the whole idea of this project is to make the character within our game addicted to getting hearts, which reflects the addiction we have to social media and its conditioning. There’s a notify button, that when pressed, will make the player push the button within the box and pick up a heart. And the goal is to eventually make the character want to pick up the hearts of its own volition, without any player intervention. You can adjust the variability of the hearts dropping, which ranges on a scale from 1-20. Increasing the variability changes the randomization of the hearts dropping. This is implemented in the radomizedHeartDrop function, which generates a random number and determines if the heart will be visible or not.  
+
+At 1, there will be an 100% chance of the heart dropping, decreasing the character’s incentive to push the button on its own, referencing how social media is like gambling for rewards, such as likes, shares, comments, follows and reposts. Increasing the variability will make the character move on its own to highlight the need for gambling-based rewards, but will decrease the chance of a heart appearing, implementing the luck factors. This is implemented in the calculateIncentive function. It generates an incentive score based on the number of hearts collected, the variability of rewards and a penalty related to luck. The final value ranges from 1-50 and is used to determine how likely the character is to push the button on its own.   
+
+Your goal as the player is to have the highest number of hearts per second without having to press the notify button to make the character pick up the hearts, and to find that balance on your own by playing around and adjusting the heart variability.
+
+### RELATING THE PROJECT TO OUR INSPIRATION:
+
 ​​Bibliography 
 
 [^GA_PRO]: ​​Galloway, Alexander R. 2004. Protocol : how control exists after decentralization. Cambridge: MIT Press. 
