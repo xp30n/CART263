@@ -91,7 +91,24 @@ main {
   height: 30px;
   width: 75px;
   padding: 20px;
-  margin: 20px 20px 20px 10px;
+  margin: 50px 20px 20px 10px;
   border-radius: 10px;
 }
 
+.var-container {
+  position: absolute;
+  top: 220px;
+  left: -7px;
+  justify-content: space-around;
+  text-align: center;
+  padding: 20px;
+  margin: 10px;
+  width: 90px;
+}
+
+p {
+  color: white;
+  text-align: center;
+  justify-content: center;
+  font-size: 70%;
+}
