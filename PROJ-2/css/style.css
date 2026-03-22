@@ -1,0 +1,21 @@
+@font-face {
+    font-family: "Hacker";
+    src: url(/assets/fonts/hacker.ttf);
+}
+
+* {
+    cursor: url("/assets/images/wii-cursor.png") 10 10, auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Hacker";
+    background-color: black;
+}
+
+p {
+    color: blue;
+    justify-content: center;
+    align-items: center;
+}
