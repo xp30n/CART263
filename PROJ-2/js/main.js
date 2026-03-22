@@ -5,10 +5,10 @@ function createWindow() {
         width: 600,
         height: 600,
         resizable: false,
-        mazimizable: false,
+        maximizable: false,
         fullscreenable: true,
         frame: false,
-        transparent: true,
+        // transparent: true,
         backgroundColor: '#00000000',
         webPreferences: {
             contextIsolation: true
@@ -16,6 +16,7 @@ function createWindow() {
     })
 
     win.loadFile('index.html');
+    // win.webContents.openDevTools();
     // win.setAlwaysOnTop(true);
 }
 

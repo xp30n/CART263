@@ -1,16 +1,16 @@
 @font-face {
     font-family: "Hacker";
-    src: url(/assets/fonts/hacker.ttf);
+    src: url("../assets/fonts/hacker.ttf") format("truetype");
 }
 
 * {
-    cursor: url("/assets/images/wii-cursor.png") 10 10, auto;
+    cursor: url("../assets/images/wii-cursor.png") 10 10, auto;
 }
 
 body {
     margin: 0;
     padding: 0;
-    font-family: "Hacker";
+    font-family: "Hacker", sans-serif;
     background-color: black;
 }
 
