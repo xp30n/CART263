@@ -6,4 +6,5 @@ Student: [Aliyah Renomeron-Ward]
 
 This repo contains exercises, experiments, and small projects created for this class
 
-<a href="https://xp30n.github.io/CART263/PROJ-1" target="_blank">PROJECT 1 - SKINNER'S BOX</a>
+<a href="https://xp30n.github.io/CART263/PROJ-1" target="_blank">PROJECT 1 - SKINNER'S BOX</a><br>
+PROJECT 2 : [USER EXPERIENCE NOT FINALIZED]</a>
