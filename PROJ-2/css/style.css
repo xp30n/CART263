@@ -19,3 +19,15 @@ p {
     justify-content: center;
     align-items: center;
 }
+
+.start-btn {
+    color: blue;
+    font-family: "Hacker", sans-serif;
+    font-size: 1em;
+    background-color: black;
+    
+    border-radius: 10px;
+    border: 2px blue solid;
+    padding: 6px;
+    
+}
