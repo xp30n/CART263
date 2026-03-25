@@ -63,7 +63,7 @@ class DrawingBoard {
     }
     if (this.drawingBoardId === "partD") {
       for (let i = 0; i < this.objectsOnCanvas.length; i++) {
-        this.objectsOnCanvas[i].changeColor("#ff0000");
+        this.objectsOnCanvas[i].changeColor("#1f009c");
       }
   
     }
