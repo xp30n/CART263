@@ -1,5 +1,7 @@
 window.onload = go_all_stuff;
 
+let micLevel = 0;
+
 function go_all_stuff(){
 console.log("go");
 
@@ -68,6 +70,30 @@ async function getMicInput() {
         });
 
         let microphoneIn = audioContext.createMediaStreamSource(audioStream);
+        const filter = audioContext.createBiquadFilter();
+        const analyser = audioContext.createAnalyser();
+        microphoneIn.connect(filter);
+        filter.connect(analyser);
+        analyser.fftSize = 32;
+
+        let frequencyData = new Uint8Array(analyser.frequencyBinCount);
+
+        requestAnimationFrame(animateFrequencies);
+
+        function animateFrequencies() {
+            analyser.getByteFrequencyData(frequencyData);
+
+            let average = 0;
+            let sum = 0;
+
+            for (let i = 0; i < frequencyData.length; i++) {
+                sum += frequencyData[i];
+            }
+            average = sum / frequencyData.length;
+            micLevel = average;
+            // console.log(average);
+            requestAnimationFrame(animateFrequencies);
+        }
         console.log(microphoneIn);
     }
     catch (err) {

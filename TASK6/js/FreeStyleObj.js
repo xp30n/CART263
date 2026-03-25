@@ -1,3 +1,12 @@
+function mapValue(value, inMin, inMax, outMin, outMax) {
+  return ((value - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
+}
+
+// Map value will change the shape of the squiggly line based on the level of the mic. Louder sounds will make the line thicker and low/quiet sounds will make it smaller
+
+// it takes the micLevel and converts it into a vlue between 0 and 255, 255 being the loudest you can get in frequency data. 
+// the outMin and the outMax control the shape of the line (the curved parts) the position of the object stays the same, it just scales differently.
+
 class FreeStyleObj {
     constructor(x, y, length, f_color, s_color,context) {
       // We write instructions to set up a Flower here
@@ -28,10 +37,12 @@ class FreeStyleObj {
       this.context.stroke(); //set the stroke
     }
 
-    update(){
-        //update freestyle
-       // console.log("free style update")
-       // this.x+=1;
+    update(micLevel){
+        let newYOffset = mapValue(micLevel, 0, 255, 20, 80);
+        this.yOffset = newYOffset
+
+        let newSpeed = mapValue(micLevel, 0, 255, 0.07, 0.25);
+        this.angularSpeed = newSpeed;
     }
   }
   
