@@ -58,7 +58,24 @@ function animationLoop(){
     window.requestAnimationFrame(animationLoop);
 }
 
+// Ensuring that we get input from the mic
+async function getMicInput() {
+    window.AudioContext = window.AudioContext || window.webkitAudioContext;
+    let audioContext = new AudioContext();
+    try {
+        let audioStream = await navigator.mediaDevices.getUserMedia({
+            audio: true,
+        });
 
+        let microphoneIn = audioContext.createMediaStreamSource(audioStream);
+        console.log(microphoneIn);
+    }
+    catch (err) {
+        console.log("has an error getting the microphone");
+    }
+}
+
+getMicInput();
 
 /** TASK 1:(Drawing Board A) - 
  *  1: animate the circle object(s) somehow/anyhow.. (there may be more than one)
@@ -72,8 +89,6 @@ function animationLoop(){
  * Please for this exercise - do not add any new shapes other than the circular object...
  * 
  */
-
-
 
 
 /** TASK 2:(Drawing Board B) - 
