@@ -25,16 +25,16 @@ class DrawingBoard {
     //differentiate which canvas
     //you can remove the console.logs /// 
     if(this.drawingBoardId ==="partA"){
-      console.log("in A")
+      // console.log("in A")
     }
     if(this.drawingBoardId ==="partB"){
-      console.log("in B")
+      // console.log("in B")
     }
     if(this.drawingBoardId ==="partC"){
-      console.log("in C")
+      // console.log("in C")
     }
     if(this.drawingBoardId ==="partD"){
-      console.log("in D")
+      // console.log("in D")
    }
   }
 
@@ -48,16 +48,16 @@ class DrawingBoard {
     //differentiate which canvas
    //you can remove the console.logs /// 
      if(this.drawingBoardId ==="partA"){
-      console.log("in A")
+      // console.log("in A")
     }
     if(this.drawingBoardId ==="partB"){
-      console.log("in B")
+      // console.log("in B")
     }
     if(this.drawingBoardId ==="partC"){
-      console.log("in C")
+      // console.log("in C")
     }
     if(this.drawingBoardId ==="partD"){
-      console.log("in D")
+      // console.log("in D")
       }
   }
   /* method to add obj to canvas */

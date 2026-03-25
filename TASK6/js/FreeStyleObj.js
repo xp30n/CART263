@@ -38,10 +38,10 @@ class FreeStyleObj {
     }
 
     update(micLevel){
-        let newYOffset = mapValue(micLevel, 0, 255, 20, 80);
+        let newYOffset = mapValue(micLevel, 0, 255, 20, 100);
         this.yOffset = newYOffset
 
-        let newSpeed = mapValue(micLevel, 0, 255, 0.07, 0.25);
+        let newSpeed = mapValue(micLevel, 0, 255, 0.07, 0.55);
         this.angularSpeed = newSpeed;
     }
   }
