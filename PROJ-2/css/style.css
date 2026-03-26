@@ -59,3 +59,8 @@ p {
     left: 540px;
     
 }
+
+.start-btn:hover {
+    color: rgb(125, 190, 255);
+    border: 2px rgb(125, 190, 255) solid;
+}
