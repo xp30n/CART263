@@ -1,18 +1,10 @@
+// Importing a library reference
 import * as THREE from 'three';
 
 const scene = new THREE.Scene();
 
 // A: The Geometry
 const geometry = new THREE.BoxGeometry(1, 1, 1);
-
-// B: The Material
-const material = new THREE.MeshBasicMaterial({color: 0x800080});
-
-// C: Put Together
-const mesh = new THREE.Mesh(geometry, material);
-
-// D: ADD TO THE SCENE
-scene.add(mesh);
 
 const sizes = {
     width: 800,
@@ -37,6 +29,38 @@ renderer.setSize(sizes.width, sizes.height);
 // Move camera
 camera.position.z = 3;
 
+// TURN ON AXES HELPER
+// https://threejs.org/docs/?q=Axes#AxesHelper
+const axesHelper = new THREE.AxesHelper(1);
+scene.add(axesHelper);
+
+// Move it
+axesHelper.position.x = -1;
+axesHelper.position.y = -1;
+// ! Materials are used to put a color on each visible pixel of the geometries
+
+const material = new THREE.MeshBasicMaterial();
+
+const sphere = new THREE.Mesh(
+    new THREE.SphereGeometry(0.5, 16, 16),
+    material
+)
+
+sphere.position.x = -1.5;
+
+const plane = new THREE.Mesh (
+    new THREE.PlaneGeometry(1, 1),
+    material
+)
+
+const torus = new THREE.Mesh (
+    new THREE.TorusGeometry(0.5, 0.3, 16, 32),
+    material
+)
+
+torus.position.x = -1.5;
+
+scene.add(sphere, plane, torus)
 
 // Renderer
 renderer.render(scene, camera);
