@@ -10,11 +10,9 @@ This repo contains exercises, experiments, and small projects created for this c
 <a href="https://xp30n.github.io/CART263/PROJ-1" target="_blank">SKINNER'S BOX</a><br>
 
 ### ASSIGNMENTS
-- <a href="https://xp30n.github.io/CART263/TASK2" target="_blank">ASSIGNMENT 1</a><br>
-- <a href="https://xp30n.github.io/CART263/TASK3" target="_blank">ASSIGNMENT 2</a><br>
-- <a href="https://xp30n.github.io/CART263/TASK4" target="_blank">ASSIGNMENT 3</a><br>
-- <a href="https://xp30n.github.io/CART263/TASK6" target="_blank">ASSIGNMENT 4</a><br>
-- <a href="https://xp30n.github.io/CART263/TASK7" target="_blank">ASSIGNMENT 5</a><br>
+- <a href="https://xp30n.github.io/CART263/TASK4" target="_blank">ASSIGNMENT 1</a><br>
+- <a href="https://xp30n.github.io/CART263/TASK6" target="_blank">ASSIGNMENT 2</a><br>
+- <a href="https://xp30n.github.io/CART263/TASK7" target="_blank">ASSIGNMENT 3</a><br>
 
 ### FINAL PROJECT
-PROJECT 2 : [USER EXPERIENCE NOT FINALIZED]</a>
+PROJECT 2 : [USER EXPERIENCE NOT FINALIZED]
